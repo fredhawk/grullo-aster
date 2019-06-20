@@ -1,0 +1,45 @@
+* {
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+input {
+  display: block;
+  max-width: 100%;
+  border-radius: 3px;
+  border: 1px solid blue;
+  padding: 0.6rem;
+}
+
+.App {
+  font-family: sans-serif;
+  padding: 0 1rem;
+  margin: 0 auto;
+  max-width: 50rem;
+}
+
+.search {
+  display: flex;
+  justify-content: center;
+  margin: 2rem auto;
+}
+.poster {
+  max-width: 400px;
+}
+
+.poster img {
+  width: 100%;
+}
