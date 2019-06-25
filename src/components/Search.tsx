@@ -1,19 +1,22 @@
 import * as React from 'react';
+import { SearchIcon } from './SearchIcon';
 
 export function Search({ query, handleChange }) {
   return (
     <section className="search">
-      <label htmlFor="query">
+      <SearchIcon size="32" color="black" />
+      <input
+        value={query}
+        type="text"
+        name="query"
+        id="query"
+        placeholder="Search for movie"
+        onChange={handleChange}
+      />
+      <label className="visuallyhidden" htmlFor="query">
         Search for movie
-        <input
-          value={query}
-          type="text"
-          name="query"
-          id="query"
-          placeholder="Ex. Matrix"
-          onChange={handleChange}
-        />
       </label>
+      <button>Search</button>
     </section>
   );
 }
