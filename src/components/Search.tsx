@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { SearchIcon } from './SearchIcon';
 
-export function Search({ query, handleChange }) {
+export function Search({ handleClick }) {
+  const [query, setQuery] = React.useState('');
+
+  const handleChange = event => {
+    setQuery(event.target.value);
+  };
   return (
     <section className="search">
       <SearchIcon size="32" color="black" />
@@ -16,7 +21,7 @@ export function Search({ query, handleChange }) {
       <label className="visuallyhidden" htmlFor="query">
         Search for movie
       </label>
-      <button>Search</button>
+      <button onClick={() => handleClick(query)}>Search</button>
     </section>
   );
 }

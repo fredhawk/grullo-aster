@@ -1,23 +1,24 @@
-import * as React from "react";
-import { Search } from "./Search";
-import { List } from "./List";
-import { movies } from "../data/movies.js";
+import * as React from 'react';
+import { Search } from './Search';
+import { List } from './List';
+import { movies } from '../data/movies.js';
 
 export function MovieSearchList() {
-  const [query, setQuery] = React.useState("");
+  const [string, setString] = React.useState('');
   const [movielist, setMovielist] = React.useState([]);
 
-  const handleChange = event => {
-    setQuery(event.target.value);
+  const handleClick = querystring => {
+    console.log(querystring);
+    setString(querystring);
   };
 
   React.useEffect(() => {
     setMovielist(movies);
-  }, [query]);
+  }, [string]);
 
   return (
     <>
-      <Search query={query} handleChange={handleChange} />
+      <Search handleClick={handleClick} />
       <List list={movielist} />
     </>
   );
