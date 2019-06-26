@@ -9,7 +9,7 @@ export function Search({ handleClick }) {
   };
   return (
     <section className="search">
-      <SearchIcon size="32" color="black" />
+      <SearchIcon size="32" color="#7accb7" />
       <input
         value={query}
         type="text"

@@ -1,10 +1,22 @@
+:root {
+  --dark-gray: #222222;
+  --greenish: #7accb7;
+  --purple: #4b4e6d;
+  --gray: #95a3b3;
+}
+
 * {
   box-sizing: border-box;
 }
 
+body,
+button,
+a {
+  color: var(--dark-gray);
+}
+
 a {
   text-decoration: none;
-  color: black;
 }
 
 ul {
@@ -19,13 +31,16 @@ li {
 input {
   display: block;
   max-width: 100%;
-  border-radius: 3px 0 0 3px;
-  border: 1px solid blue;
+  border-radius: 4px 0 0 4px;
+  border: 1px ridge rgba(221, 221, 221, 0.46);
+  border-width: 1px 0 1px 1px;
   padding: 0.6rem;
 }
 button {
+  background: #7accb7;
   border-radius: 0 3px 3px 0;
-  border: 1px solid blue;
+  border: 1px solid #7accb7;
+  padding: 0 1rem;
 }
 svg {
   align-self: center;
