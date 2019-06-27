@@ -1,10 +1,15 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Oswald:700&display=swap');
+
 :root {
   --dark-gray: #222222;
   --greenish: #7accb7;
   --purple: #4b4e6d;
   --gray: #95a3b3;
+  --heading-font: 'Oswald', sans-serif;
+  --body-font: 'Merriweather', serif;
 }
-
+font-family: 'Oswald', sans-serif;
+font-family: 'Merriweather', serif;
 * {
   box-sizing: border-box;
 }
@@ -13,6 +18,17 @@ body,
 button,
 a {
   color: var(--dark-gray);
+  font-family: var(--body-font);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--purple);
+  font-family: var(--heading-font);
 }
 
 a {
