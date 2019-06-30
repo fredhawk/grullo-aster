@@ -30,6 +30,10 @@ h6 {
   font-family: var(--heading-font);
 }
 
+section {
+  margin-bottom: 2rem;
+}
+
 a {
   text-decoration: none;
 }
@@ -39,9 +43,6 @@ ul {
   padding: 0;
 }
 
-section {
-  margin-bottom: 2rem;
-}
 li {
   list-style: none;
 }
@@ -50,8 +51,7 @@ input {
   border-radius: 4px 0 0 4px;
   border: 1px ridge rgba(221, 221, 221, 0.46);
   border-width: 1px 0 1px 1px;
-  padding: 0.6rem;
-  padding-left: 2.5rem;
+  padding: 0.6rem 0.6rem 0.6rem 2.5rem;
 }
 
 button {
@@ -60,6 +60,7 @@ button {
   border: 1px solid #7accb7;
   padding: 0 1rem;
 }
+
 svg {
   align-self: center;
 }
@@ -86,6 +87,7 @@ svg {
   display: flex;
   justify-content: center;
 }
+
 .search-form {
   display: flex;
   position: relative;
@@ -94,7 +96,6 @@ svg {
 .search-icon {
   position: absolute;
   left: 0.3rem;
-  top: 0.2rem;
 }
 .poster {
   max-width: 400px;

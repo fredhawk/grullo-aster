@@ -21,7 +21,7 @@ export function MovieSearchList() {
       <section className="search">
         <Search handleClick={handleClick} />
       </section>
-      <section className="movielist">
+      <section className="list">
         <List list={movielist} />
       </section>
     </>

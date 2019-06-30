@@ -9,9 +9,7 @@ export function Search({ handleClick }) {
   };
   return (
     <div className="search-form">
-      <div className="search-icon">
-        <SearchIcon size="32" color="#7accb7" />
-      </div>
+      <SearchIcon size="32" color="#7accb7" />
       <input
         value={query}
         type="text"
