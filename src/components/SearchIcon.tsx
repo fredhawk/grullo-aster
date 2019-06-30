@@ -1,8 +1,9 @@
-import * as React from 'react';
+import * as React from "react";
 
 export function SearchIcon({ size, color }) {
   return (
     <svg
+      // className="search-icon"
       style={{ width: `${size}px`, height: `${size}px` }}
       viewBox="0 0 24 24"
     >

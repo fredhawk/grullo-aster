@@ -1,10 +1,10 @@
-import * as React from 'react';
-import { Search } from './Search';
-import { List } from './List';
-import { movies } from '../data/movies.js';
+import * as React from "react";
+import { Search } from "./Search";
+import { List } from "./List";
+import { movies } from "../data/movies.js";
 
 export function MovieSearchList() {
-  const [string, setString] = React.useState('');
+  const [string, setString] = React.useState("");
   const [movielist, setMovielist] = React.useState([]);
 
   const handleClick = querystring => {
@@ -18,8 +18,12 @@ export function MovieSearchList() {
 
   return (
     <>
-      <Search handleClick={handleClick} />
-      <List list={movielist} />
+      <section className="search">
+        <Search handleClick={handleClick} />
+      </section>
+      <section className="movielist">
+        <List list={movielist} />
+      </section>
     </>
   );
 }
