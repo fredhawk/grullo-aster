@@ -1,9 +1,9 @@
-import * as React from 'react';
+import * as React from "react";
 
 export function Header() {
   return (
-    <header>
-      <h1>Find a movie</h1>
+    <header className="site-header">
+      <h1>Movay</h1>
     </header>
   );
 }

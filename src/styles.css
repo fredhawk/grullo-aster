@@ -83,6 +83,12 @@ svg {
   max-width: 50rem;
 }
 
+.site-header h1 {
+  text-align: center;
+  text-transform: uppercase;
+  background: white;
+}
+
 .search {
   display: flex;
   justify-content: center;
