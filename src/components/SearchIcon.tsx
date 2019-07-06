@@ -1,6 +1,6 @@
 import * as React from "react";
 
-export function SearchIcon({ size, color }) {
+export function SearchIcon({ size = "40", color = "black" }) {
   return (
     <svg
       className="search-icon"

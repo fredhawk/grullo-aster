@@ -104,3 +104,12 @@ svg {
 .poster img {
   width: 100%;
 }
+
+.site-footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.copyright {
+  text-align: right;
+}
