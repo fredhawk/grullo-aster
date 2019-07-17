@@ -5,15 +5,15 @@ export function ListItem({ item }) {
   return (
     <li>
       {/* <div class="card"> */}
-      <Link to={`/${item.id}`} state={{ item }}>
+      <Link to={`/${item.id}`} state={{ item }} className="list-item">
         <div className="poster">
           <img src={item.poster_img} alt={item.title} />
         </div>
         <div className="info">
           <h3>{item.title}</h3>
           <p>{item.description}</p>
+          <p>More info...</p>
         </div>
-        <p>More info...</p>
       </Link>
       <hr />
       {/* </div> */}

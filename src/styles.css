@@ -119,3 +119,14 @@ svg {
 .copyright {
   text-align: right;
 }
+
+@media only screen and (min-width: 40rem) {
+  .list-item {
+    display: flex;
+  }
+  .poster {
+    margin-right: 2rem;
+    max-width: 20rem;
+    min-width: 12rem;
+  }
+}
