@@ -103,6 +103,7 @@ svg {
   position: absolute;
   left: 0.3rem;
 }
+
 .poster {
   max-width: 400px;
 }
@@ -121,6 +122,14 @@ svg {
 }
 
 @media only screen and (min-width: 40rem) {
+  .list li:nth-child(odd) {
+    background: #f0f1f2;
+  }
+
+  .list li:hover {
+    background: #c9ced4;
+  }
+
   .list-item {
     display: flex;
   }
