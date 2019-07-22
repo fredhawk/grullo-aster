@@ -1,12 +1,12 @@
-@import url("https://fonts.googleapis.com/css?family=Merriweather|Oswald:700&display=swap");
+@import url('https://fonts.googleapis.com/css?family=Merriweather|Oswald:700&display=swap');
 
 :root {
   --dark-gray: #222222;
   --greenish: #7accb7;
   --purple: #4b4e6d;
   --gray: #95a3b3;
-  --heading-font: "Oswald", sans-serif;
-  --body-font: "Merriweather", serif;
+  --heading-font: 'Oswald', sans-serif;
+  --body-font: 'Merriweather', serif;
 }
 
 * {
@@ -65,6 +65,10 @@ svg {
   align-self: center;
 }
 
+li hr {
+  margin-top: 0;
+}
+
 .visuallyhidden {
   position: absolute;
   overflow: hidden;
@@ -104,12 +108,16 @@ svg {
   left: 0.3rem;
 }
 
+.list li {
+  margin-bottom: 2rem;
+}
 .poster {
   max-width: 400px;
 }
 
 .poster img {
   width: 100%;
+  height: 100%;
 }
 
 .site-footer {

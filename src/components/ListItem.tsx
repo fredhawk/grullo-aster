@@ -1,10 +1,9 @@
-import * as React from "react";
-import { Link } from "@reach/router";
+import * as React from 'react';
+import { Link } from '@reach/router';
 
 export function ListItem({ item }) {
   return (
     <li>
-      {/* <div class="card"> */}
       <Link to={`/${item.id}`} state={{ item }} className="list-item">
         <div className="poster">
           <img src={item.poster_img} alt={item.title} />
@@ -15,8 +14,6 @@ export function ListItem({ item }) {
           <p>More info...</p>
         </div>
       </Link>
-      <hr />
-      {/* </div> */}
     </li>
   );
 }
