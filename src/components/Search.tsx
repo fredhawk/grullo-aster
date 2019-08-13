@@ -15,13 +15,15 @@ export function Search({ handleClick }) {
         type="text"
         name="query"
         id="query"
-        placeholder="Search for movie"
+        placeholder="Search"
         onChange={handleChange}
       />
       <label className="visuallyhidden" htmlFor="query">
         Search for movie
       </label>
-      <button onClick={() => handleClick(query)}>Search</button>
+      <button className="search-btn" onClick={() => handleClick(query)}>
+        Search
+      </button>
     </div>
   );
 }

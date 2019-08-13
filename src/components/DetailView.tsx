@@ -14,14 +14,14 @@ export function DetailView({
     return `${hours}h ${mins}min`;
   }
   return (
-    <main>
-      <Link to="../">{`<- Back`}</Link>
-      <div className="poster">
+    <main className="detail">
+      <Link to="../" className="detail-back">{`<- Back`}</Link>
+      <div className="detail-img">
         <img src={item.poster_img} alt={item.title} />
       </div>
-      <div className="info">
+      <div>
         <h3>{item.title}</h3>
-        <p>
+        <p className="detail-genre">
           {item.genres.map(
             (genre: string, i: number): string => {
               if (item.genres.length - 1 === i) return `${genre}`;
@@ -31,25 +31,44 @@ export function DetailView({
         </p>
         <p>{item.description}</p>
         <p>
-          Directors:
+          <span className="detail-directors">{`Directors: `}</span>
           {item.directors.map(
-            (director: string, i: number): string => {
-              if (item.directors.length - 1 === i) return `${director}`;
-              return `${director}, `;
+            (director: string, i: number): React.ReactElement => {
+              if (item.directors.length - 1 === i)
+                return (
+                  <span
+                    key={i}
+                    className="detail-director"
+                  >{`${director} `}</span>
+                );
+              return (
+                <span
+                  key={i}
+                  className="detail-director"
+                >{`${director}, `}</span>
+              );
             }
           )}
         </p>
-        <p>
+        <p className="detail-actors">
           Actors:{" "}
           {item.actors.map(
-            (actor: string, i: number): string => {
-              if (item.actors.length - 1 === i) return `${actor}`;
-              return `${actor}, `;
+            (actor: string, i: number): React.ReactElement => {
+              if (item.actors.length - 1 === i)
+                return (
+                  <span key={i} className="detail-actor">{`${actor} `}</span>
+                );
+              return (
+                <span key={i} className="detail-actor">{`${actor}, `}</span>
+              );
             }
           )}
         </p>
-        <p>{parseHours(item.playtime)}</p>
-        <p>{format(item.release_date, "YYYY-MM-DD")}</p>
+        <p className="detail-meta">
+          <span>{parseHours(item.playtime)}</span>
+          <span>{format(item.release_date, "YYYY-MM-DD")}</span>
+        </p>
+        <p />
       </div>
     </main>
   );
