@@ -1,4 +1,5 @@
 import * as React from "react";
+import ky from "ky";
 import { Link } from "@reach/router";
 
 export function DetailView({
@@ -6,6 +7,8 @@ export function DetailView({
     state: { item }
   }
 }) {
+  const [movie, setMovie] = React.useState(null);
+
   function parseHours(time: string): string {
     const minutes: number = Number(time.split(" ")[0]);
     const hours = Math.floor(minutes / 60);
@@ -13,64 +16,45 @@ export function DetailView({
 
     return `${hours}h ${mins}min`;
   }
+
+  React.useEffect(() => {
+    const getMovie = async () => {
+      const apiKey: string = "3c2930e6";
+      const baseUrl: string = `https://www.omdbapi.com/`;
+      const url: string = `${baseUrl}?apikey=${apiKey}&i=${item.imdbID}`;
+      const parsed = await ky.get(url).json();
+      if (parsed.Response === "True") {
+        setMovie(parsed);
+      } else {
+        setMovie([]);
+      }
+    };
+    getMovie();
+  }, [item]);
+
+  if (movie === null) return <main>Loading...</main>;
+
   return (
     <main className="detail">
       <Link to="../" className="detail-back">{`<- Back`}</Link>
       <div className="detail-img">
-        <img src={item.Poster} alt={item.Title} />
+        <img src={movie.Poster} alt={movie.Title} />
       </div>
       <div>
-        <h3>{item.Title}</h3>
-        <p className="detail-genre">
-          {/* {item.genres.map(
-            (genre: string, i: number): string => {
-              if (item.genres.length - 1 === i) return `${genre}`;
-              return `${genre}, `;
-            }
-          )} */}
-          {item.Genre}
-        </p>
-        <p>{item.description}</p>
+        <h3>{movie.Title}</h3>
+        <p className="detail-genre">{movie.Genre}</p>
+        <p>{movie.Plot}</p>
         <p>
           <span className="detail-directors">
-            Directors: <span className="detail-director">{item.Director}</span>
+            Directors: <span className="detail-director">{movie.Director}</span>
           </span>
-          {/* {item.directors.map(
-            (director: string, i: number): React.ReactElement => {
-              if (item.directors.length - 1 === i)
-                return (
-                  <span
-                    key={i}
-                    className="detail-director"
-                  >{`${director} `}</span>
-                );
-              return (
-                <span
-                  key={i}
-                  className="detail-director"
-                >{`${director}, `}</span>
-              );
-            }
-          )} */}
         </p>
         <p className="detail-actors">
-          Actors:<span className="detail-actor">{` ${item.Actors}`}</span>
-          {/* {item.actors.map(
-            (actor: string, i: number): React.ReactElement => {
-              if (item.actors.length - 1 === i)
-                return (
-                  <span key={i} className="detail-actor">{`${actor} `}</span>
-                );
-              return (
-                <span key={i} className="detail-actor">{`${actor}, `}</span>
-              );
-            }
-          )} */}
+          Actors:<span className="detail-actor">{` ${movie.Actors}`}</span>
         </p>
         <p className="detail-meta">
-          <span>{parseHours(item.Runtime)}</span>
-          {/* <span>{format(item.release_date, "YYYY-MM-DD")}</span> */}
-          <span>{item.Released}</span>
+          <span>{parseHours(movie.Runtime)}</span>
+          <span>{movie.Released}</span>
         </p>
         <p />
       </div>

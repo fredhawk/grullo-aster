@@ -11,20 +11,19 @@ export function MovieSearchList() {
     setSearchString(querystring);
   };
 
-  const getMovies = async () => {
-    const apiKey: string = "3c2930e6";
-    const baseUrl: string = `https://www.omdbapi.com/`;
-    const search: string = searchString;
-    const url: string = `${baseUrl}?apikey=${apiKey}&s=${search}`;
-    const parsed = await ky.get(url).json();
-    if (parsed.Response === "True") {
-      setMovielist(parsed.Search);
-    } else {
-      setMovielist([]);
-    }
-  };
-
   React.useEffect(() => {
+    const getMovies = async () => {
+      const apiKey: string = "3c2930e6";
+      const baseUrl: string = `https://www.omdbapi.com/`;
+      const search: string = searchString;
+      const url: string = `${baseUrl}?apikey=${apiKey}&s=${search}`;
+      const parsed = await ky.get(url).json();
+      if (parsed.Response === "True") {
+        setMovielist(parsed.Search);
+      } else {
+        setMovielist([]);
+      }
+    };
     getMovies();
   }, [searchString]);
 
