@@ -2,6 +2,7 @@ import * as React from "react";
 import { ListItem } from "./ListItem";
 
 export function List({ list }) {
+  console.log(list);
   return (
     <ul className="list">
       {list.length > 0 ? (
