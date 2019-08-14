@@ -5,9 +5,11 @@ export function List({ list }) {
   return (
     <ul className="list">
       {list.length > 0 ? (
-        list.map((listitem: object) => (
-          <ListItem key={listitem.id} item={listitem} />
-        ))
+        list.map(
+          (listitem: object): React.ReactElement => (
+            <ListItem key={listitem.imdbID} item={listitem} />
+          )
+        )
       ) : (
         <p>No result</p>
       )}
