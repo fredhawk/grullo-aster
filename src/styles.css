@@ -52,7 +52,7 @@ input {
   border-radius: 4px 0 0 4px;
   border: 1px ridge rgba(221, 221, 221, 0.46);
   border-width: 1px 0 1px 1px;
-  padding: 0.6rem 0.6rem 0.6rem 2.5rem;
+  padding: 0.3rem 0.3rem 0.3rem 1.3rem;
 }
 
 button {
@@ -82,6 +82,9 @@ svg {
   padding: 0 1rem;
   margin: 0 auto;
   max-width: 50rem;
+  display: grid;
+  grid-template-rows: 5rem 1fr 5rem;
+  height: 100vh;
 }
 
 .site-header h1 {
@@ -103,6 +106,7 @@ svg {
 .search-icon {
   position: absolute;
   left: 0.3rem;
+  width: 16px !important;
 }
 
 .search-btn {
@@ -176,6 +180,15 @@ svg {
 .copyright {
   text-align: right;
   color: var(--gray);
+}
+
+@media only screen and (min-width: 22rem) {
+  input {
+    padding: 0.6rem 0.6rem 0.6rem 2.5rem;
+  }
+  .search-icon {
+    width: 32px !important;
+  }
 }
 
 @media only screen and (min-width: 40rem) {

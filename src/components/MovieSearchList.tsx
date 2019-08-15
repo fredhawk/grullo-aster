@@ -5,7 +5,8 @@ import { List } from "./List";
 
 export function MovieSearchList() {
   const [searchString, setSearchString] = React.useState("");
-  const [movielist, setMovielist] = React.useState([]);
+  const [movielist, setMovielist] = React.useState(null);
+  const [isSearched, setIsSearched] = React.useState(false);
 
   const handleClick = querystring => {
     setSearchString(querystring);
@@ -20,8 +21,10 @@ export function MovieSearchList() {
       const parsed = await ky.get(url).json();
       if (parsed.Response === "True") {
         setMovielist(parsed.Search);
+        setIsSearched(true);
       } else {
         setMovielist([]);
+        setIsSearched(false);
       }
     };
     getMovies();
@@ -32,9 +35,11 @@ export function MovieSearchList() {
       <section className="search">
         <Search handleClick={handleClick} />
       </section>
-      <section className="list">
-        <List list={movielist} />
-      </section>
+      {isSearched && (
+        <section className="list">
+          <List list={movielist} />
+        </section>
+      )}
     </>
   );
 }
